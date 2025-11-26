@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="{{ page.description | default: 'Portfolio of Brighten Hayama — web apps, ML projects, and teaching.' }}">
+<meta name="keywords" content="software engineer, portfolio, ML, web development">
+
+<meta property="og:title" content="{{ page.title | default: 'Brighten Hayama's Portfolio' }}">
+<meta property="og:description" content="{{ page.description | default: 'ML, Web Dev, and Teaching' }}">
+<meta property="og:image" content="https://brightenhayama.dev/assets/img/preview.png">
+<meta property="og:url" content="{{ page.url | default: 'https://brightenhayama.dev/' | absolute_url }}">
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+
+<title>
+  {% if page.title %}
+    {{ page.title }} | Brighten Hayama
+  {% else %}
+    Brighten Hayama
+  {% endif %}
+</title>

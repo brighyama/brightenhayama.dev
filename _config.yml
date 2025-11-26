@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Brighten Hayama's Portfolio
+title: brighyama
 email: brighyama@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Brigten Hayama's Portfolio
@@ -28,7 +28,6 @@ twitter_username:
 github_username:  brighyama
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
 

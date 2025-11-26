@@ -1,0 +1,298 @@
+/* =========================================
+CSS RESET + BASE
+========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Colors similar to devlopr-jekyll theme */
+  --bg: #090e1a;           /* Dark navy */
+  --bg-alt: #1e293b;       /* Slightly lighter navy */
+  --text: #e2e8f0;         /* Soft gray text */
+  --text-muted: #94a3b8;   /* Muted text */
+  --accent: #ffffff;       /* Sky blue highlight */
+  --accent-hover: #0ea5e9;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --radius: 12px;
+  --section-padding: 4rem;
+  --max-width: 960px;
+
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  color: var(--text);
+  font-weight: 600;
+}
+
+p {
+  margin-top: 1rem;
+  color: var(--text-muted);
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* =========================================
+LAYOUT HELPERS
+========================================= */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: var(--section-padding) 1.5rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.mt-2 { margin-top: 1rem; }
+.mt-4 { margin-top: 2rem; }
+
+/* =========================================
+HEADER
+========================================= */
+
+.site-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--card-border);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Mobile toggle button */
+.nav-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ============ Mobile styles ============ */
+@media (max-width: 768px) {
+  .nav {
+    align-items: flex-start;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 1.5rem;
+    top: 60px;
+    background: var(--bg-alt);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    display: none; /* hidden by default */
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+}
+
+
+/* =========================================
+HOME BANNER
+========================================= */
+
+.home-banner {
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.home-banner .profile-img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  /* margin-bottom: 1rem; */
+  object-fit: cover;
+}
+
+.home-banner h1 {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+}
+
+.home-banner-subtitle {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* =========================================
+GENERIC BANNER
+========================================= */
+
+.page-banner {
+  /* height: 40vh; 
+  min-height: 260px; */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-banner-overlay {
+  background: rgba(0, 0, 0, 0.6);     /* darkens the bg image */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-banner-title {
+  color: var(--text);
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 10rem;
+}
+
+
+/* =========================================
+BUTTONS
+========================================= */
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #0f172a;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-outline {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: #0f172a;
+}
+
+/* =========================================
+PROJECT CARDS (devlopr-style)
+========================================= */
+
+.project-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.project-card-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--card-border);
+  margin-top: 4rem;
+  color: var(--text-muted);
+}
+
