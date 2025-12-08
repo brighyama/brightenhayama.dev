@@ -256,11 +256,6 @@ ABOUT ME PAGE
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.about-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-  border-color: var(--accent);
-}
 
 .about-card-media {
   max-width: 200px;
@@ -314,6 +309,101 @@ ABOUT ME PAGE
   }
 }
 
+
+/* =========================================
+PROJECTS PAGE
+========================================= */
+.projects-page {
+  padding: 4rem 0;
+}
+
+.projects-title {
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.project-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Make entire project card clickable */
+.project-card-link {
+  display: block;                /* ensures the <a> wraps the card like a block */
+  text-decoration: none;         /* remove underline */
+  color: inherit;                /* keep text color consistent */
+  border-radius: 20px;           /* match card rounding */
+}
+
+/* Hover effect now applies through the wrapper */
+.project-card-link:hover .project-card {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  border-color: var(--accent);
+  cursor: pointer;
+}
+
+
+.project-card-media {
+  width: clamp(140px, 20vw, 280px);
+  height: 100%;
+  aspect-ratio: 1 / 1; /* square */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-card-body {
+  width: 75%;
+}
+
+.project-card-body h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.project-card-body p {
+  margin: 0;
+  line-height: 1.8;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  
+  .project-card-media {
+    max-width: 100%;
+    margin: 0 auto 1rem;
+  }
+  
+  .project-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+}
 
 /* =========================================
 BUTTONS
