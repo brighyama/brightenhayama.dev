@@ -5,7 +5,6 @@ layout: default
 <div class="home-top-container">
   <div class="container">
     <div class="home-banner">
-      <img class="profile-img" src="{{ '/assets/img/profile.jpg' | relative_url }}">
       <h1 class="home-banner-intro">
         Hello! Welcome to my website.
       </h1>
@@ -13,5 +12,40 @@ layout: default
         This is my personal website that includes information about me as a student, as a person, and as an aspiring developer.
       </p>
     </div>
+
+    <section class="theme-picker" aria-label="Site theme">
+      <h2 class="theme-picker-title">Choose a theme</h2>
+      <!-- <p class="theme-picker-sub">Your choice applies across the whole site and is remembered on your next visit.</p> -->
+      <div class="theme-picker-swatches" role="radiogroup" aria-label="Color theme">
+        <button type="button" class="theme-swatch" data-theme="ocean"    role="radio" aria-checked="false">
+          <span class="theme-swatch-preview swatch-ocean"></span>
+          <span class="theme-swatch-name">Ocean</span>
+        </button>
+        <button type="button" class="theme-swatch" data-theme="twilight" role="radio" aria-checked="false">
+          <span class="theme-swatch-preview swatch-twilight"></span>
+          <span class="theme-swatch-name">Twilight</span>
+        </button>
+        <button type="button" class="theme-swatch" data-theme="royal"    role="radio" aria-checked="false">
+          <span class="theme-swatch-preview swatch-royal"></span>
+          <span class="theme-swatch-name">Royal</span>
+        </button>
+        <button type="button" class="theme-swatch" data-theme="forest"   role="radio" aria-checked="false">
+          <span class="theme-swatch-preview swatch-forest"></span>
+          <span class="theme-swatch-name">Forest</span>
+        </button>
+        <button type="button" class="theme-swatch" data-theme="random"   role="radio" aria-checked="false" aria-label="Randomize theme">
+          <span class="theme-swatch-preview swatch-random">
+            <svg class="swatch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <polyline points="21 16 21 21 16 21"></polyline>
+              <line x1="15" y1="15" x2="21" y2="21"></line>
+              <line x1="4" y1="4" x2="9" y2="9"></line>
+            </svg>
+          </span>
+          <span class="theme-swatch-name">Random</span>
+        </button>
+      </div>
+    </section>
   </div>
 </div>

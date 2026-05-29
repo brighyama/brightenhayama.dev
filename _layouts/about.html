@@ -4,52 +4,53 @@ layout: default
 
 <div class="about-page">
   <div class="container">
-    <h1 class="about-title">About Me</h1>
+    <div class="about-shell">
+      <div class="about-card-large">
 
-    <!-- Card 1 -->
-    <div class="about-card">
-      <div class="about-card-media">
-        <img src="{{ '/assets/img/background.png' | relative_url }}" alt="About me photo">
-      </div>
-      <div class="about-card-body">
-        <h2>Who I Am</h2>
-        <p>
-          I'm Brighten Hayama, a Master's student at UCSD in the Computer Science and Engineering department.
-          I recently graduated in 2025 from UCSD with my Bachelor's in Mathematics - Computer Science, and a minor in Data Science.
-        </p>
+        <header class="about-header">
+          <img class="profile-img" src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="Brighten Hayama">
+          <div class="about-header-text">
+            <h1>About Me</h1>
+            <!-- <p class="about-tagline">CS Master's student at UCSD — interested in ML interpretability.</p> -->
+          </div>
+        </header>
+
+        <section class="about-section">
+          <!-- <h2>Who I Am</h2> -->
+          <p>
+            I'm Brighten Hayama, a Master's student at UC San Diego in the Computer Science and Engineering department.
+            I graduated from UCSD in 2025 with a Bachelor's in Mathematics–Computer Science and a minor in Data Science.
+          </p>
+        </section>
+
+        <section class="about-section">
+          <h2>Education</h2>
+          <ul>
+            <li><strong>M.S., Computer Science</strong> — UC San Diego <span class="about-meta">(in progress)</span></li>
+            <li><strong>B.S., Mathematics–Computer Science</strong> — UC San Diego <span class="about-meta">(2025)</span></li>
+            <li><strong>Minor, Data Science</strong> — UC San Diego</li>
+          </ul>
+        </section>
+
+        <section class="about-section">
+          <h2>Research Focus</h2>
+          <p>
+            My research interests center on machine learning interpretability — understanding how
+            neural networks form internal representations and why they make the decisions they do.
+            I'm drawn to questions at the intersection of empirical ML and mathematical reasoning.
+          </p>
+        </section>
+
+        <section class="about-section">
+          <h2>Interests &amp; Hobbies</h2>
+          <p>
+            Outside of research, I enjoy competitive games of all kinds — chess, Counter-Strike, and
+            Valorant have been my long-time favorites. I like thinking about strategy, decision-making
+            under uncertainty, and the surprising amount of overlap between game theory and ML.
+          </p>
+        </section>
+
       </div>
     </div>
-
-    <!-- Card 2 -->
-    <div class="about-card">
-      <div class="about-card-media">
-        <img src="{{ '/assets/img/background.png' | relative_url }}" alt="Work and projects">
-      </div>
-      <div class="about-card-body">
-        <h2>What I Work  On</h2>
-        <p>
-          I am passionate about everything related to machine learning and AI.
-          More specifically, I am interested in ML interpretability and understanding neural nets.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="about-card">
-      <div class="about-card-media">
-        <img src="{{ '/assets/img/background.png' | relative_url }}" alt="Interests and life">
-      </div>
-      <div class="about-card-body">
-        <h2>Hobbies</h2>
-        <p>
-          In my free time, I enjoy playing and thinking about all sorts of competitive games. 
-          My favorites have been chess, Counter-Strike, and Valorant.
-
-        </p>
-      </div>
-    </div>
-
   </div>
 </div>
-
-

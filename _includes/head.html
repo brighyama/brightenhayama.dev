@@ -1,6 +1,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('site-theme') || 'ocean';
+      document.documentElement.setAttribute('data-theme', t);
+      if (t === 'random') {
+        var c = localStorage.getItem('site-theme-random-colors');
+        if (c) {
+          var p = JSON.parse(c), h1 = p.h1, h2 = p.h2, h3 = (h1 + 30) % 360;
+          var r = document.documentElement;
+          r.style.setProperty('--shell-grad',
+            'linear-gradient(135deg, hsla(' + h1 + ', 80%, 55%, 0.55) 0%, hsla(' + h2 + ', 75%, 60%, 0.40) 50%, rgba(255,255,255,0.08) 100%)');
+          r.style.setProperty('--shell-glow', 'hsla(' + h1 + ', 80%, 55%, 0.28)');
+          r.style.setProperty('--shell-accent', 'hsla(' + h2 + ', 75%, 60%, 0.70)');
+          r.style.setProperty('--aurora-1', 'hsla(' + h1 + ', 70%, 55%, 0.32)');
+          r.style.setProperty('--aurora-2', 'hsla(' + h2 + ', 70%, 60%, 0.26)');
+          r.style.setProperty('--aurora-3', 'hsla(' + h3 + ', 65%, 55%, 0.24)');
+          r.style.setProperty('--aurora-4', 'hsla(' + h2 + ', 60%, 50%, 0.20)');
+        }
+      }
+    } catch (e) {}
+  })();
+</script>
+
 <meta name="description" content="{{ page.description | default: 'Portfolio of Brighten Hayama — web apps, ML projects, and teaching.' }}">
 <meta name="keywords" content="software engineer, portfolio, ML, web development">
 
