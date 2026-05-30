@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Minigames placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e1b4b"/>
+      <stop offset="0.55" stop-color="#4338ca"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+
+  <!-- Playful game glyphs -->
+  <g fill="#ffffff" opacity="0.9">
+    <!-- target / aim -->
+    <g transform="translate(250 300)" fill="none" stroke="#ffffff" stroke-width="10">
+      <circle r="70"/><circle r="44"/><circle r="18" fill="#f472b6" stroke="none"/>
+    </g>
+    <!-- playing card -->
+    <g transform="translate(560 235)">
+      <rect width="120" height="170" rx="14" fill="#ffffff"/>
+      <text x="20" y="52" font-family="Georgia, serif" font-size="42" fill="#dc2626">A</text>
+      <path d="M60 80 l30 38 -30 38 -30 -38 z" fill="#dc2626"/>
+    </g>
+    <!-- roulette chip -->
+    <g transform="translate(880 305)">
+      <circle r="74" fill="#10b981"/>
+      <circle r="74" fill="none" stroke="#ffffff" stroke-width="10" stroke-dasharray="26 22"/>
+      <circle r="40" fill="none" stroke="#ffffff" stroke-width="6"/>
+    </g>
+  </g>
+
+  <text x="600" y="500" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="78" font-weight="700" fill="#ffffff" letter-spacing="2">Minigames</text>
+  <text x="600" y="560" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="30" fill="#c7d2fe">a browser arcade · placeholder image</text>
+</svg>

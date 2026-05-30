@@ -9,6 +9,27 @@ layout: default
     <div class="project-grid">
 
       <button type="button" class="project-shell"
+              data-title="Minigames"
+              data-image="{{ '/assets/img/minigames-project.svg' | relative_url }}"
+              data-url="https://games.brightenhayama.dev"
+              data-description="A browser arcade of single-player games — a reaction trainer, an aim trainer, blackjack, and roulette — with user accounts, a points economy, daily bonuses, unlockable card-deck cosmetics, and global leaderboards. Built with React, TypeScript, and Vite, backed by Supabase (Postgres + Auth). Game logic is server-authoritative with Row Level Security so balances and scores can't be tampered with. Multiplayer games are in the works.">
+        <div class="project-card-large">
+          <div class="project-card-media">
+            <img src="{{ '/assets/img/minigames-project.svg' | relative_url }}" alt="Minigames">
+          </div>
+          <div class="project-card-body">
+            <h2>Minigames</h2>
+            <p>
+              A browser arcade of single-player games — reaction and aim trainers, blackjack,
+              and roulette — with accounts, a points economy, unlockable cosmetics, and global
+              leaderboards. Built with React, TypeScript, and Supabase, with server-authoritative
+              scoring. Multiplayer coming soon.
+            </p>
+          </div>
+        </div>
+      </button>
+
+      <button type="button" class="project-shell"
               data-title="NBA Player Interaction Network Analysis"
               data-image="{{ '/assets/img/graph-project.png' | relative_url }}"
               data-url="https://bbeat2782.github.io/nba-analysis/index.html"
