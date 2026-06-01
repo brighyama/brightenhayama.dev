@@ -1,0 +1,570 @@
+# =============================================================================
+# Courses shown on the /courses page.
+#
+# Notes on fields:
+#   grade      Only filled in when the grade is B+ or better (per design).
+#              Leave blank ("") for pass/no-pass or in-progress courses.
+#   status     Set to "in-progress" for courses without a final grade yet.
+#   professor  Left blank for now — fill in as you remember them. The page
+#              only renders this line when it is non-empty.
+#   tags       Drive the filter buttons. Area tags + ML-focus tags:
+#                areas: math | ml | data-science | systems | theory
+#                ml:    computer-vision | deep-learning | probabilistic |
+#                       recommender | unsupervised | ai-search | classical
+#   sortkey    year*10 + quarter (Winter=1, Spring=2, Summer=3, Fall=4).
+#              The page sorts by this descending (most recent first).
+#
+# Descriptions are taken from the official UCSD catalog (catalog.ucsd.edu).
+# Topics/seminar courses have no fixed catalog text, so those summarize the
+# course intent plus the specific section topic.
+# =============================================================================
+
+# ---------- Graduate (M.S. Computer Science) ----------
+
+- code: "CSE 252D"
+  title: "Advanced Computer Vision"
+  subtitle: ""
+  grade: ""
+  status: "in-progress"
+  level: "Graduate"
+  term: "Spring 2026"
+  sortkey: 20262
+  units: 4
+  tags: [ml, computer-vision, deep-learning]
+  professor: ""
+  description: "Advanced concepts in computer vision, including 3-D reconstruction, face recognition, object detection, semantic segmentation, action recognition, and domain adaptation. Consistent with recent developments, deep learning forms a significant fraction of the class, with lectures and assignments covering recent work on fundamental problems in the field."
+
+- code: "CSE 290"
+  title: "Seminar in Computer Science & Engineering"
+  subtitle: "Disentangled Learning"
+  grade: ""
+  status: "in-progress"
+  level: "Graduate"
+  term: "Spring 2026"
+  sortkey: 20262
+  units: 4
+  tags: [ml, unsupervised]
+  professor: ""
+  description: "A graduate seminar on current research in computer science and engineering. This section focuses on disentangled representation learning — methods for learning latent representations whose individual dimensions capture distinct, interpretable factors of variation in data."
+
+- code: "CSE 291B"
+  title: "Topics in Bioinformatics"
+  subtitle: "Big Data Science and Knowledge"
+  grade: ""
+  status: "in-progress"
+  level: "Graduate"
+  term: "Spring 2026"
+  sortkey: 20262
+  units: 4
+  tags: [data-science, ml]
+  professor: ""
+  description: "A graduate topics course in bioinformatics. This section explores big data science and knowledge discovery — scalable methods for extracting and reasoning over structured knowledge from large biological and scientific datasets."
+
+- code: "CSE 291P"
+  title: "Topics in Programming Languages, Compilers & Software Engineering"
+  subtitle: "Differentiable Programming"
+  grade: ""
+  status: "in-progress"
+  level: "Graduate"
+  term: "Spring 2026"
+  sortkey: 20262
+  units: 4
+  tags: [systems, ml]
+  professor: ""
+  description: "A graduate topics course in programming languages, compilers, and software engineering. This section covers differentiable programming — treating programs as differentiable objects so that gradient-based optimization can be applied end-to-end, bridging classical software with modern deep learning."
+
+- code: "CSE 220"
+  title: "Operating Systems Principles"
+  subtitle: ""
+  grade: ""
+  status: "in-progress"
+  level: "Graduate"
+  term: "Winter 2026"
+  sortkey: 20261
+  units: 4
+  tags: [systems]
+  professor: ""
+  description: "Core operating systems concepts, including processes, synchronization, scheduling, memory management, virtual memory, file systems, and protection."
+
+- code: "CSE 251U"
+  title: "Unsupervised Learning"
+  subtitle: ""
+  grade: ""
+  status: "in-progress"
+  level: "Graduate"
+  term: "Winter 2026"
+  sortkey: 20261
+  units: 4
+  tags: [ml, unsupervised]
+  professor: ""
+  description: "A broad view of unsupervised learning. Topics include descriptive statistics; clustering; projection, singular value decomposition, and spectral embedding; geometry of high-dimensional spaces; common probability distributions; density estimation; graphical models and latent variable modeling; sparse coding and dictionary learning; shallow and deep autoencoders; and self-supervised learning."
+
+- code: "CSE 252B"
+  title: "Computer Vision II"
+  subtitle: ""
+  grade: ""
+  status: "in-progress"
+  level: "Graduate"
+  term: "Winter 2026"
+  sortkey: 20261
+  units: 4
+  tags: [ml, computer-vision]
+  professor: ""
+  description: "Focused coverage of multiview geometry, structure from motion, image segmentation, motion segmentation, texture analysis and recognition, object detection, and image-based rendering."
+
+- code: "CSE 250A"
+  title: "Probabilistic Reasoning and Learning"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Graduate"
+  term: "Fall 2025"
+  sortkey: 20254
+  units: 4
+  tags: [ml, probabilistic]
+  professor: ""
+  description: "Methods based on probability theory for reasoning and learning under uncertainty. Content includes directed and undirected probabilistic graphical models, exact and approximate inference, latent variables, expectation-maximization, hidden Markov models, Markov decision processes, and applications to vision, robotics, speech, and text."
+
+- code: "CSE 252A"
+  title: "Computer Vision I"
+  subtitle: ""
+  grade: "A-"
+  status: ""
+  level: "Graduate"
+  term: "Fall 2025"
+  sortkey: 20254
+  units: 4
+  tags: [ml, computer-vision]
+  professor: ""
+  description: "Comprehensive introduction to computer vision, providing broad coverage including low-level vision (image formation, photometry, color, image feature detection), inferring 3-D properties from images (shape-from-shading, stereo vision, motion interpretation), and object recognition."
+
+# ---------- Undergraduate (B.S. Mathematics–Computer Science) ----------
+
+- code: "COGS 9"
+  title: "Introduction to Data Science"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Spring 2025"
+  sortkey: 20252
+  units: 4
+  tags: [data-science]
+  professor: ""
+  description: "Introduces the concept of data and its role in science, along with the ideas behind data mining, text mining, machine learning, and graph theory, and how scientists and companies leverage these methods to uncover new insights into human cognition."
+
+- code: "CSE 130"
+  title: "Programming Languages: Principles and Paradigms"
+  subtitle: ""
+  grade: "A+"
+  status: ""
+  level: "Undergraduate"
+  term: "Spring 2025"
+  sortkey: 20252
+  units: 4
+  tags: [systems]
+  professor: ""
+  description: "Introduction to programming languages and paradigms, the components that comprise them, and the principles of language design, all through the analysis and comparison of a variety of languages. Involves programming in most of the languages studied."
+
+- code: "MATH 20E"
+  title: "Vector Calculus"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Winter 2025"
+  sortkey: 20251
+  units: 4
+  tags: [math]
+  professor: ""
+  description: "Change of variables in multiple integrals, Jacobians, line integrals, Green's theorem. Vector fields, gradient fields, divergence, curl. Spherical and cylindrical coordinates. Taylor series in several variables. Surface integrals, Stokes' theorem, Gauss' theorem, and conservative fields."
+
+- code: "DSC 190"
+  title: "Topics in Data Science"
+  subtitle: "Network Science & Graph Theory"
+  grade: ""
+  status: ""
+  level: "Undergraduate"
+  term: "Winter 2025"
+  sortkey: 20251
+  units: 4
+  tags: [data-science, math, theory]
+  professor: ""
+  description: "An advanced topics course in data science. This section covers network science and graph theory — modeling complex systems as graphs and analyzing their structure, connectivity, centrality, and dynamics, with applications to real-world networks."
+
+- code: "DSC 102"
+  title: "Systems for Scalable Analytics"
+  subtitle: ""
+  grade: ""
+  status: ""
+  level: "Undergraduate"
+  term: "Fall 2024"
+  sortkey: 20244
+  units: 4
+  tags: [data-science, systems]
+  professor: ""
+  description: "Principles of computing systems and infrastructure for scaling analytics to large datasets. Topics include the memory hierarchy, distributed systems, model selection, heterogeneous datasets, and deployment at scale, along with the design of systems such as MapReduce/Hadoop and Spark."
+
+- code: "COGS 108"
+  title: "Data Science in Practice"
+  subtitle: ""
+  grade: "A+"
+  status: ""
+  level: "Undergraduate"
+  term: "Spring 2024"
+  sortkey: 20242
+  units: 4
+  tags: [data-science]
+  professor: ""
+  description: "Data science as a multidisciplinary field spanning computer science, statistics, cognitive science, data visualization, and machine learning. Teaches the critical skills needed to pursue a data science career through hands-on programming and experimental challenges."
+
+- code: "MATH 180B"
+  title: "Introduction to Stochastic Processes I"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Spring 2024"
+  sortkey: 20242
+  units: 4
+  tags: [math]
+  professor: ""
+  description: "Random vectors, multivariate densities, covariance matrices, and the multivariate normal distribution. Random walks and the Poisson process, with additional topics as time permits."
+
+- code: "ECE 176"
+  title: "Introduction to Deep Learning and Applications"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Winter 2024"
+  sortkey: 20241
+  units: 4
+  tags: [ml, deep-learning, computer-vision]
+  professor: ""
+  description: "Fundamentals of deep learning, including deep neural network architectures (e.g., ConvNets, RNNs) and the optimization algorithms used to train them, with hands-on implementation in PyTorch. Introduces deep learning applications in computer vision, robotics, and natural language processing."
+
+- code: "MATH 180A"
+  title: "Introduction to Probability"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Winter 2024"
+  sortkey: 20241
+  units: 2
+  tags: [math]
+  professor: ""
+  description: "Probability spaces, random variables, independence, conditional probability, distributions, expectation, variance, joint distributions, and the central limit theorem."
+
+- code: "MATH 189"
+  title: "Exploratory Data Analysis and Inference"
+  subtitle: ""
+  grade: "A+"
+  status: ""
+  level: "Undergraduate"
+  term: "Winter 2024"
+  sortkey: 20241
+  units: 4
+  tags: [math, data-science]
+  professor: ""
+  description: "Quantitative methods and statistical techniques for analyzing data, especially big data. Reviews probability and then covers processing, analyzing, and visualizing data in R, with topics including inference, sampling, hypothesis testing, bootstrap methods, regression, and diagnostics."
+
+- code: "CSE 151A"
+  title: "Machine Learning: Learning Algorithms"
+  subtitle: ""
+  grade: "A+"
+  status: ""
+  level: "Undergraduate"
+  term: "Fall 2023"
+  sortkey: 20234
+  units: 4
+  tags: [ml, classical]
+  professor: ""
+  description: "Broad introduction to machine learning. Covers supervised methods such as k-nearest-neighbor classifiers, decision trees, boosting, and perceptrons, and unsupervised methods such as k-means and hierarchical clustering. Beyond the algorithms themselves, the course focuses on the principles behind them."
+
+- code: "CSE 158R"
+  title: "Recommender Systems and Web Mining"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Fall 2023"
+  sortkey: 20234
+  units: 4
+  tags: [ml, data-science, recommender]
+  professor: ""
+  description: "Current methods for data mining and predictive analytics, with emphasis on studying real-world datasets, building working systems, and putting ideas from machine learning research into practice."
+
+- code: "DSC 100"
+  title: "Introduction to Data Management"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Fall 2023"
+  sortkey: 20234
+  units: 4
+  tags: [data-science, systems]
+  professor: ""
+  description: "Introduction to the storage and management of large-scale data using classical relational (SQL) systems, with an eye toward data science applications. Covers the SQL data model and query language, relational data modeling and schema design, cost-based query optimization, relational database architecture, and database-backed applications."
+
+- code: "MATH 173A"
+  title: "Optimization Methods for Data Science I"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Fall 2023"
+  sortkey: 20234
+  units: 4
+  tags: [math, ml, classical]
+  professor: ""
+  description: "Introduction to convexity: convex sets and functions, the geometry of hyperplanes, and support functions for convex sets, connecting hyperplanes to support vector machines. Linear and quadratic programming, including optimality conditions, duality, primal and dual forms of linear SVMs, active-set methods, and interior methods."
+
+- code: "CSE 150B"
+  title: "Introduction to Artificial Intelligence: Search and Reasoning"
+  subtitle: ""
+  grade: "B+"
+  status: ""
+  level: "Undergraduate"
+  term: "Spring 2023"
+  sortkey: 20232
+  units: 4
+  tags: [ml, ai-search]
+  professor: ""
+  description: "Important ideas and algorithms in search and reasoning, and how they are used in practical AI applications. Topics include A* search, adversarial search, Monte Carlo tree search, reinforcement learning, constraint solving and optimization, and propositional and first-order reasoning."
+
+- code: "DSC 80"
+  title: "The Practice and Application of Data Science"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Spring 2023"
+  sortkey: 20232
+  units: 4
+  tags: [data-science]
+  professor: ""
+  description: "Bridges lower- and upper-division data science courses as well as methods courses in other fields. Students master the data science life cycle and learn fundamental principles and techniques spanning algorithms, statistics, machine learning, visualization, and data systems."
+
+- code: "MATH 103B"
+  title: "Modern Algebra II"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Spring 2023"
+  sortkey: 20232
+  units: 4
+  tags: [math]
+  professor: ""
+  description: "Second course in a two-quarter introduction to abstract algebra, emphasizing rings and fields. Topics include definitions and basic properties of rings, fields, and ideals; homomorphisms; and irreducibility of polynomials."
+
+- code: "CSE 101"
+  title: "Design and Analysis of Algorithms"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Winter 2023"
+  sortkey: 20231
+  units: 4
+  tags: [theory]
+  professor: ""
+  description: "Design and analysis of efficient algorithms, with emphasis on nonnumerical algorithms such as sorting, searching, pattern matching, and graph and network algorithms. Measuring the complexity of algorithms in time and storage, and NP-complete problems."
+
+- code: "CSE 105"
+  title: "Theory of Computability"
+  subtitle: ""
+  grade: "B+"
+  status: ""
+  level: "Undergraduate"
+  term: "Winter 2023"
+  sortkey: 20231
+  units: 4
+  tags: [theory]
+  professor: ""
+  description: "Introduction to the mathematical theory of computability. Formal languages, finite automata and regular expressions, push-down automata and context-free languages, computable (recursive) functions, Turing machines, the halting problem, and undecidability."
+
+- code: "MATH 103A"
+  title: "Modern Algebra I"
+  subtitle: ""
+  grade: "A+"
+  status: ""
+  level: "Undergraduate"
+  term: "Winter 2023"
+  sortkey: 20231
+  units: 4
+  tags: [math]
+  professor: ""
+  description: "First course in a two-quarter introduction to abstract algebra, emphasizing group theory. Topics include the definitions and basic properties of groups, properties of isomorphisms, and subgroups."
+
+- code: "MATH 154"
+  title: "Discrete Mathematics and Graph Theory"
+  subtitle: ""
+  grade: "A-"
+  status: ""
+  level: "Undergraduate"
+  term: "Winter 2023"
+  sortkey: 20231
+  units: 4
+  tags: [math, theory]
+  professor: ""
+  description: "Basic concepts in graph theory, including trees, walks, paths and connectivity, cycles, matching theory, vertex and edge coloring, planar graphs, flows, and combinatorial algorithms — covering Hall's theorems, the max-flow min-cut theorem, Euler's formula, and the traveling salesman problem."
+
+- code: "CSE 100R"
+  title: "Advanced Data Structures"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Fall 2022"
+  sortkey: 20224
+  units: 4
+  tags: [systems, theory]
+  professor: ""
+  description: "High-performance data structures and supporting algorithms. Use and implementation of structures such as (un)balanced trees, graphs, priority queues, and hash tables, along with memory management, pointers, and recursion. Theoretical and practical performance analysis, both average-case and amortized, using C++ and the STL."
+
+- code: "DSC 40A"
+  title: "Theoretical Foundations of Data Science I"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Fall 2022"
+  sortkey: 20224
+  units: 4
+  tags: [data-science, ml, math]
+  professor: ""
+  description: "Exposes students to the mathematical theory underlying fundamental topics in machine learning, including empirical risk minimization, optimization, regression, classification, and discrete probability."
+
+- code: "MATH 109"
+  title: "Mathematical Reasoning"
+  subtitle: ""
+  grade: "A-"
+  status: ""
+  level: "Undergraduate"
+  term: "Fall 2022"
+  sortkey: 20224
+  units: 4
+  tags: [math]
+  professor: ""
+  description: "Uses a variety of topics in mathematics to introduce rigorous mathematical proof, emphasizing quantifiers, induction, negation, proof by contradiction, naive set theory, equivalence relations, and epsilon-delta proofs."
+
+- code: "MATH 183"
+  title: "Statistical Methods"
+  subtitle: ""
+  grade: "A+"
+  status: ""
+  level: "Undergraduate"
+  term: "Fall 2022"
+  sortkey: 20224
+  units: 4
+  tags: [math, data-science]
+  professor: ""
+  description: "Introduction to probability with discrete and continuous random variables — binomial, Poisson, and Gaussian distributions — and the central limit theorem. Data analysis and inferential statistics: graphical techniques, confidence intervals, hypothesis tests, and curve fitting."
+
+- code: "CSE 21"
+  title: "Mathematics for Algorithms and Systems"
+  subtitle: ""
+  grade: "A-"
+  status: ""
+  level: "Undergraduate"
+  term: "Spring 2022"
+  sortkey: 20222
+  units: 4
+  tags: [math, theory]
+  professor: ""
+  description: "Mathematical concepts used to model and analyze algorithms and computer systems. Topics include counting techniques (inclusion-exclusion, recursive counting, permutations and combinations), data representations, analysis of algorithms (order notation, time complexity, loop invariants), recurrence relations, graphs and trees, and basic probability and its applications."
+
+- code: "CSE 30"
+  title: "Computer Organization and Systems Programming"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Spring 2022"
+  sortkey: 20222
+  units: 4
+  tags: [systems]
+  professor: ""
+  description: "Introduction to the organization of modern digital computers. Students write programs in assembly, design basic processors capable of executing them, and build the basic components of processors using digital logic. Topics include assembly programming, combinational and sequential logic, processor performance and design, and the memory hierarchy."
+
+- code: "MATH 18"
+  title: "Linear Algebra"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Spring 2022"
+  sortkey: 20222
+  units: 4
+  tags: [math]
+  professor: ""
+  description: "Matrix algebra, Gaussian elimination, and determinants. Linear and affine subspaces and bases of Euclidean spaces. Eigenvalues and eigenvectors, quadratic forms, orthogonal matrices, and diagonalization of symmetric matrices, with applications and computation in MATLAB."
+
+- code: "CSE 12"
+  title: "Basic Data Structures and Object-Oriented Design"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Winter 2022"
+  sortkey: 20221
+  units: 4
+  tags: [systems]
+  professor: ""
+  description: "Use and implementation of basic data structures including linked lists, stacks, and queues, plus advanced structures such as binary trees and hash tables. Object-oriented design including interfaces, polymorphism, encapsulation, abstract data types, pre-/post-conditions, and recursion, using Java and the Java Collections framework."
+
+- code: "CSE 15L"
+  title: "Software Tools and Techniques Laboratory"
+  subtitle: ""
+  grade: "A"
+  status: ""
+  level: "Undergraduate"
+  term: "Winter 2022"
+  sortkey: 20221
+  units: 2
+  tags: [systems]
+  professor: ""
+  description: "Hands-on exploration of software development tools and techniques, and investigation of the scientific process as applied to software development and debugging. Emphasis on weekly hands-on laboratory experiences and laboratory-notebooking techniques applied to software design."
+
+- code: "CSE 20"
+  title: "Discrete Mathematics"
+  subtitle: ""
+  grade: "A-"
+  status: ""
+  level: "Undergraduate"
+  term: "Winter 2022"
+  sortkey: 20221
+  units: 4
+  tags: [math, theory]
+  professor: ""
+  description: "Introduces the ways logic is used in computer science: for reasoning, as a language for specifications, and as operations in computation. Concepts include sets, relations, functions, equivalence relations, partial orders, number systems, and proof methods (especially induction and recursion). Propositional and predicate logic are applied to domains such as circuit design, databases, cryptography, and program correctness."
+
+- code: "CSE 11"
+  title: "Accelerated Introduction to Programming"
+  subtitle: ""
+  grade: "A+"
+  status: ""
+  level: "Undergraduate"
+  term: "Fall 2021"
+  sortkey: 20214
+  units: 4
+  tags: [systems]
+  professor: ""
+  description: "Accelerated introductory programming with an object-oriented approach. Covers variables, conditionals, loops, functions/methods, structured data storage, and mutation, along with the Java language, class design, interfaces, basic class hierarchies, recursion, event-based programming, and file I/O, plus basics of command-line navigation."
+
+- code: "MATH 20C"
+  title: "Calculus and Analytic Geometry for Science and Engineering"
+  subtitle: ""
+  grade: "A+"
+  status: ""
+  level: "Undergraduate"
+  term: "Fall 2021"
+  sortkey: 20214
+  units: 4
+  tags: [math]
+  professor: ""
+  description: "Vector geometry, vector functions and their derivatives. Partial differentiation, maxima and minima, and double integration."

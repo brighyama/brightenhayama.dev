@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+{% assign courses = site.data.courses | sort: "sortkey" | reverse %}
+
+<div class="courses-page">
+  <div class="container">
+    <h1 class="courses-title">Coursework</h1>
+    <p class="courses-intro">
+    
+    </p>
+
+    <!-- Filter bar -->
+    <div class="course-filters" id="course-filters">
+      <div class="filter-group">
+        <span class="filter-group-label">Area</span>
+        <div class="filter-row">
+          <button type="button" class="filter-btn is-active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="math">Mathematics</button>
+          <button type="button" class="filter-btn" data-filter="ml">Machine Learning &amp; AI</button>
+          <button type="button" class="filter-btn" data-filter="data-science">Data Science</button>
+          <button type="button" class="filter-btn" data-filter="systems">Systems &amp; Programming</button>
+          <button type="button" class="filter-btn" data-filter="theory">Theory &amp; Algorithms</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-group-label">ML focus</span>
+        <div class="filter-row">
+          <button type="button" class="filter-btn" data-filter="computer-vision">Computer Vision</button>
+          <button type="button" class="filter-btn" data-filter="deep-learning">Deep Learning</button>
+          <button type="button" class="filter-btn" data-filter="probabilistic">Probabilistic ML</button>
+          <button type="button" class="filter-btn" data-filter="unsupervised">Unsupervised Learning</button>
+          <button type="button" class="filter-btn" data-filter="recommender">Recommender Systems</button>
+          <button type="button" class="filter-btn" data-filter="ai-search">AI &amp; Search</button>
+          <button type="button" class="filter-btn" data-filter="classical">Classical ML</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="course-count" id="course-count" aria-live="polite"></p>
+
+    <!-- Course list -->
+    <div class="course-list" id="course-list">
+      {% for course in courses %}
+      <article class="course-card" data-tags="{{ course.tags | join: ' ' }}">
+        <div class="course-card-head">
+          <div class="course-code-block">
+            <span class="course-code">{{ course.code }}</span>
+            <span class="course-level course-level--{{ course.level | downcase }}">{{ course.level }}</span>
+          </div>
+        </div>
+
+        <h2 class="course-name">
+          {{ course.title }}
+          {% if course.subtitle and course.subtitle != "" %}
+            <span class="course-subtitle">{{ course.subtitle }}</span>
+          {% endif %}
+        </h2>
+
+        <div class="course-meta">
+          <span>{{ course.term }}</span>
+          {% if course.professor and course.professor != "" %}
+            <span class="dot">&middot;</span>
+            <span class="course-prof">Prof. {{ course.professor }}</span>
+          {% endif %}
+        </div>
+
+        <p class="course-desc">{{ course.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+
+    <p class="course-empty" id="course-empty" hidden>No courses in this category.</p>
+  </div>
+</div>

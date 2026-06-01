@@ -126,3 +126,46 @@
     }
   });
 })();
+
+/* =========================
+   Courses filter
+   ========================= */
+(function () {
+  const filterBar = document.getElementById("course-filters");
+  const list = document.getElementById("course-list");
+  if (!filterBar || !list) return;
+
+  const buttons = filterBar.querySelectorAll(".filter-btn");
+  const cards = list.querySelectorAll(".course-card");
+  const countEl = document.getElementById("course-count");
+  const emptyEl = document.getElementById("course-empty");
+
+  function apply(filter) {
+    let visible = 0;
+    cards.forEach((card) => {
+      const tags = (card.dataset.tags || "").split(/\s+/);
+      const show = filter === "all" || tags.indexOf(filter) !== -1;
+      card.hidden = !show;
+      if (show) visible++;
+    });
+
+    if (countEl) {
+      countEl.textContent =
+        visible + (visible === 1 ? " course" : " courses");
+    }
+    if (emptyEl) emptyEl.hidden = visible !== 0;
+  }
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      buttons.forEach((b) => {
+        const on = b === btn;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      apply(btn.dataset.filter || "all");
+    });
+  });
+
+  apply("all");
+})();
