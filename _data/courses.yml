@@ -1,25 +1,4 @@
-# =============================================================================
-# Courses shown on the /courses page.
-#
-# Notes on fields:
-#   grade      Only filled in when the grade is B+ or better (per design).
-#              Leave blank ("") for pass/no-pass or in-progress courses.
-#   status     Set to "in-progress" for courses without a final grade yet.
-#   professor  Left blank for now — fill in as you remember them. The page
-#              only renders this line when it is non-empty.
-#   tags       Drive the filter buttons. Area tags + ML-focus tags:
-#                areas: math | ml | data-science | systems | theory
-#                ml:    computer-vision | deep-learning | probabilistic |
-#                       recommender | unsupervised | ai-search | classical
-#   sortkey    year*10 + quarter (Winter=1, Spring=2, Summer=3, Fall=4).
-#              The page sorts by this descending (most recent first).
-#
-# Descriptions are taken from the official UCSD catalog (catalog.ucsd.edu).
-# Topics/seminar courses have no fixed catalog text, so those summarize the
-# course intent plus the specific section topic.
-# =============================================================================
-
-# ---------- Graduate (M.S. Computer Science) ----------
+# ---------- Graduate ----------
 
 - code: "CSE 252D"
   title: "Advanced Computer Vision"
@@ -45,20 +24,7 @@
   units: 4
   tags: [ml, unsupervised]
   professor: ""
-  description: "A graduate seminar on current research in computer science and engineering. This section focuses on disentangled representation learning — methods for learning latent representations whose individual dimensions capture distinct, interpretable factors of variation in data."
-
-- code: "CSE 291B"
-  title: "Topics in Bioinformatics"
-  subtitle: "Big Data Science and Knowledge"
-  grade: ""
-  status: "in-progress"
-  level: "Graduate"
-  term: "Spring 2026"
-  sortkey: 20262
-  units: 4
-  tags: [data-science, ml]
-  professor: ""
-  description: "A graduate topics course in bioinformatics. This section explores big data science and knowledge discovery — scalable methods for extracting and reasoning over structured knowledge from large biological and scientific datasets."
+  description: "A graduate seminar on current research in computer science and engineering. This section focuses on disentangled representation learning, methods for learning latent representations whose individual dimensions capture distinct, interpretable factors of variation in data."
 
 - code: "CSE 291P"
   title: "Topics in Programming Languages, Compilers & Software Engineering"
@@ -138,20 +104,8 @@
   professor: ""
   description: "Comprehensive introduction to computer vision, providing broad coverage including low-level vision (image formation, photometry, color, image feature detection), inferring 3-D properties from images (shape-from-shading, stereo vision, motion interpretation), and object recognition."
 
-# ---------- Undergraduate (B.S. Mathematics–Computer Science) ----------
+# ---------- Undergraduate ----------
 
-- code: "COGS 9"
-  title: "Introduction to Data Science"
-  subtitle: ""
-  grade: "A"
-  status: ""
-  level: "Undergraduate"
-  term: "Spring 2025"
-  sortkey: 20252
-  units: 4
-  tags: [data-science]
-  professor: ""
-  description: "Introduces the concept of data and its role in science, along with the ideas behind data mining, text mining, machine learning, and graph theory, and how scientists and companies leverage these methods to uncover new insights into human cognition."
 
 - code: "CSE 130"
   title: "Programming Languages: Principles and Paradigms"
