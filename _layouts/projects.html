@@ -9,6 +9,27 @@ layout: default
     <div class="project-grid">
 
       <button type="button" class="project-shell"
+              data-title="Agentic Wildfire Smoke Detection"
+              data-image="{{ '/assets/img/wildfire-project.png' | relative_url }}"
+              data-url="https://github.com/brighyama/cse252d-wildfire-detection"
+              data-description="An agentic system for early wildfire smoke detection. Four specialized LLM agents coordinate computer-vision tools (optical flow, SAM2/SAM3) and weather data to cut the false positives that fog and clouds cause in single-image CNN detectors. Evaluated on the FIgLib dataset. Graduate CV project (CSE 252D).">
+        <div class="project-card-large">
+          <div class="project-card-media">
+            <img src="{{ '/assets/img/wildfire-project.png' | relative_url }}" alt="Agentic Wildfire Smoke Detection">
+          </div>
+          <div class="project-card-body">
+            <h2>Agentic Wildfire Smoke Detection</h2>
+            <p>
+              An agentic system for early wildfire smoke detection. Four specialized LLM agents
+              coordinate computer-vision tools (optical flow, SAM2/SAM3) and weather data to cut the
+              false positives that fog and clouds cause in single-image CNN detectors. Evaluated on
+              the FIgLib dataset. Graduate CV project (CSE 252D).
+            </p>
+          </div>
+        </div>
+      </button>
+
+      <button type="button" class="project-shell"
               data-title="Minigames"
               data-image="{{ '/assets/img/minigames-project.png' | relative_url }}"
               data-url="https://games.brightenhayama.dev"
@@ -20,8 +41,7 @@ layout: default
           <div class="project-card-body">
             <h2>Minigames</h2>
             <p>
-              A browser arcade of single-player games. Supports user accounts, points economy, unlockable cosmetics, and global
-              leaderboards. Built with React, TypeScript, and Supabase. Online multiplayer coming soon.
+              A browser arcade of single-player games. User accounts, a points economy, daily bonuses, unlockable cosmetics, and global leaderboards. Built with React, TypeScript, and Vite, backed by Supabase.
             </p>
           </div>
         </div>
@@ -39,9 +59,7 @@ layout: default
           <div class="project-card-body">
             <h2>NBA Player Interaction Network Analysis</h2>
             <p>
-              Final project for my Network Theory class. We analyzed assist networks of NBA players
-              from 2001–2024 using the NBA API, with interactive visualizations filterable by team
-              and year, plus per-player stats on hover.
+              Final project for my Network Theory class. My partner and I analyzed the assist networks of all NBA players from 2001–2024, using data pulled from the NBA API. The visualizations can be filtered to specific teams or to all NBA players over a single year. Hovering a node surfaces player-specific statistics like assists, average teammates assisted, and centrality measures.
             </p>
           </div>
         </div>
@@ -59,9 +77,7 @@ layout: default
           <div class="project-card-body">
             <h2>Zelp</h2>
             <p>
-              A Yelp-inspired social app for university students, built during a 10-week
-              San Diego Supercomputing Center summer internship. Collaborated with 5 other UCSD
-              students and worked across the front- and back-end.
+              A Yelp-inspired social web app for university students, built during a 10-week San Diego Supercomputing Center summer 2024 internship. I collaborated with 5 other UCSD undergraduates using Agile, contributing across the front- and back-end. We shipped features for restaurant discovery, user reviews, and friend activity feeds tailored to a campus setting.
             </p>
           </div>
         </div>
