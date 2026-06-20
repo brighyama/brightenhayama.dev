@@ -16,6 +16,7 @@
     descEl.textContent = card.dataset.description || "";
     const url = card.dataset.url || "#";
     linkEl.href = url;
+    linkEl.innerHTML = (card.dataset.cta || "Visit project") + " &nbsp;&rarr;";
     linkEl.style.display = url && url !== "#" ? "inline-block" : "none";
     const img = card.dataset.image;
     if (img) {
