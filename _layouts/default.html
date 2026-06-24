@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="forest">
+<html lang="en">
 <head>
   {% include head.html %}
 </head>
 <body>
-  <div class="aurora" aria-hidden="true">
-    <div class="aurora-blob blob-1"></div>
-    <div class="aurora-blob blob-2"></div>
-    <div class="aurora-blob blob-3"></div>
-    <div class="aurora-blob blob-4"></div>
-  </div>
-  {% include header.html %}
+  <canvas id="neuro-bg" class="neuro-bg" aria-hidden="true"></canvas>
+  <div class="neuro-veil" aria-hidden="true"></div>
+
   <main>
     {{ content }}
   </main>
-  <!-- {% include footer.html %} -->
-  
+
+  <!-- <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; {{ site.time | date: "%Y" }} Brighten Hayama</span>
+      <span class="footer-links">
+        <a href="https://github.com/brighyama" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:brighyama@gmail.com">Email</a>
+      </span>
+    </div>
+  </footer> -->
+
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>
-
