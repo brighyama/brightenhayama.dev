@@ -1,64 +1,155 @@
-/* =========================
-   Project modal
-   ========================= */
+/* =========================================================
+   Neuron / constellation background — drifting node network
+   with lines between nearby nodes and connections to the cursor.
+   No library. Renders once (static) under reduced-motion.
+   ========================================================= */
 (function () {
-  const modal = document.getElementById("project-modal");
-  if (!modal) return;
+  const canvas = document.getElementById("neuro-bg");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const titleEl = document.getElementById("project-modal-title");
-  const descEl = document.getElementById("project-modal-description");
-  const imgEl = document.getElementById("project-modal-image");
-  const linkEl = document.getElementById("project-modal-link");
-  let lastFocused = null;
+  const RGB = "74, 222, 128"; // accent green
+  const LINK_DIST = 160;
+  const MOUSE_DIST = 130;
 
-  function openModal(card) {
-    titleEl.textContent = card.dataset.title || "";
-    descEl.textContent = card.dataset.description || "";
-    const url = card.dataset.url || "#";
-    linkEl.href = url;
-    linkEl.innerHTML = (card.dataset.cta || "Visit project") + " &nbsp;&rarr;";
-    linkEl.style.display = url && url !== "#" ? "inline-block" : "none";
-    const img = card.dataset.image;
-    if (img) {
-      imgEl.src = img;
-      imgEl.alt = card.dataset.title || "";
-      imgEl.parentElement.style.display = "";
-    } else {
-      imgEl.parentElement.style.display = "none";
+  let w = 0;
+  let h = 0;
+  let nodes = [];
+  let raf = null;
+  const mouse = { x: null, y: null };
+
+  function initNodes() {
+    const count = Math.round(Math.min(110, Math.max(36, (w * h) / 16000)));
+    nodes = [];
+    for (let i = 0; i < count; i++) {
+      nodes.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.175,
+        vy: (Math.random() - 0.5) * 0.175,
+      });
     }
-
-    lastFocused = document.activeElement;
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-    modal.querySelector(".project-modal-close").focus();
   }
 
-  function closeModal() {
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-    if (lastFocused) lastFocused.focus();
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = window.innerWidth;
+    h = window.innerHeight;
+    canvas.style.width = w + "px";
+    canvas.style.height = h + "px";
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    initNodes();
   }
 
-  document.querySelectorAll(".project-shell").forEach((card) => {
-    card.addEventListener("click", () => openModal(card));
-  });
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
 
-  modal.querySelectorAll("[data-close-modal]").forEach((el) => {
-    el.addEventListener("click", closeModal);
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("is-open")) {
-      closeModal();
+    for (let i = 0; i < nodes.length; i++) {
+      const n = nodes[i];
+      if (!reduce) {
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x <= 0 || n.x >= w) n.vx *= -1;
+        if (n.y <= 0 || n.y >= h) n.vy *= -1;
+      }
     }
+
+    // node-to-node links — batched into a few opacity buckets so we issue a
+    // handful of stroke() calls per frame instead of one per line.
+    const BUCKETS = 6;
+    const paths = [];
+    for (let b = 0; b < BUCKETS; b++) paths.push(new Path2D());
+    const linkMax2 = LINK_DIST * LINK_DIST;
+    for (let i = 0; i < nodes.length; i++) {
+      const a = nodes[i];
+      for (let j = i + 1; j < nodes.length; j++) {
+        const b = nodes[j];
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < linkMax2) {
+          const t = 1 - Math.sqrt(d2) / LINK_DIST;
+          let bi = (t * BUCKETS) | 0;
+          if (bi >= BUCKETS) bi = BUCKETS - 1;
+          paths[bi].moveTo(a.x, a.y);
+          paths[bi].lineTo(b.x, b.y);
+        }
+      }
+    }
+    ctx.lineWidth = 1;
+    for (let b = 0; b < BUCKETS; b++) {
+      ctx.strokeStyle = "rgba(" + RGB + "," + ((b + 0.5) / BUCKETS) * 0.32 + ")";
+      ctx.stroke(paths[b]);
+    }
+
+    // node-to-cursor links — all one opacity, so a single path + stroke.
+    if (mouse.x !== null) {
+      const mouseMax2 = MOUSE_DIST * MOUSE_DIST;
+      const mpath = new Path2D();
+      for (let i = 0; i < nodes.length; i++) {
+        const a = nodes[i];
+        const dx = a.x - mouse.x;
+        const dy = a.y - mouse.y;
+        if (dx * dx + dy * dy < mouseMax2) {
+          mpath.moveTo(a.x, a.y);
+          mpath.lineTo(mouse.x, mouse.y);
+        }
+      }
+      ctx.strokeStyle = "rgba(" + RGB + ", 0.4)";
+      ctx.stroke(mpath);
+    }
+
+    // nodes
+    ctx.fillStyle = "rgba(202, 245, 216, 0.85)";
+    for (let i = 0; i < nodes.length; i++) {
+      const n = nodes[i];
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, 1.6, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    if (!reduce) raf = window.requestAnimationFrame(draw);
+  }
+
+  let resizeTimer = null;
+  window.addEventListener("resize", function () {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(function () {
+      resize();
+      if (reduce) draw();
+    }, 150);
   });
+
+  window.addEventListener(
+    "mousemove",
+    function (e) {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      if (reduce && raf === null) {
+        raf = window.requestAnimationFrame(function () {
+          draw();
+          raf = null;
+        });
+      }
+    },
+    { passive: true }
+  );
+  window.addEventListener("mouseout", function () {
+    mouse.x = null;
+    mouse.y = null;
+    if (reduce) draw();
+  });
+
+  resize();
+  draw();
 })();
 
-/* =========================
+/* =========================================================
    Courses filter
-   ========================= */
+   ========================================================= */
 (function () {
   const filterBar = document.getElementById("course-filters");
   const list = document.getElementById("course-list");
@@ -77,10 +168,8 @@
       card.hidden = !show;
       if (show) visible++;
     });
-
     if (countEl) {
-      countEl.textContent =
-        visible + (visible === 1 ? " course" : " courses");
+      countEl.textContent = visible + (visible === 1 ? " course" : " courses");
     }
     if (emptyEl) emptyEl.hidden = visible !== 0;
   }

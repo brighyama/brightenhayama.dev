@@ -1,21 +1,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="description" content="{{ page.description | default: 'Portfolio of Brighten Hayama — web apps, ML projects, and teaching.' }}">
-<meta name="keywords" content="software engineer, portfolio, ML, web development">
+<meta name="description" content="{{ page.description | default: 'Portfolio of Brighten Hayama — computer vision, machine learning, and web apps.' }}">
 
-<meta property="og:title" content="{{ page.title | default: 'Brighten Hayama's Portfolio' }}">
-<meta property="og:description" content="{{ page.description | default: 'ML, Web Dev, and Teaching' }}">
+<meta property="og:title" content="{{ page.title | default: 'Brighten Hayama' }}">
+<meta property="og:description" content="{{ page.description | default: 'Portfolio of Brighten Hayama — computer vision, machine learning, and web apps.' }}">
 <meta property="og:image" content="https://brightenhayama.dev/assets/img/preview.png">
-<meta property="og:url" content="{{ page.url | default: 'https://brightenhayama.dev/' | absolute_url }}">
+<meta property="og:url" content="{{ page.url | default: '/' | absolute_url }}">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"></noscript>
 
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
-
 <title>
-  {% if page.title %}
-    {{ page.title }} | Brighten Hayama
-  {% else %}
-    Brighten Hayama
-  {% endif %}
+  {% if page.title and page.title != "Home" %}{{ page.title }} · Brighten Hayama{% else %}Brighten Hayama{% endif %}
 </title>

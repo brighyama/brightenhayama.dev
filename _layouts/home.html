@@ -2,20 +2,101 @@
 layout: default
 ---
 
-<div class="home-top-container">
-  <div class="container">
-    <section class="home-hero" aria-labelledby="home-title">
-      <div class="home-hero-kicker">Welcome to my website</div>
+<div class="container">
 
-      <h1 class="home-hero-title" id="home-title">
-        <span class="home-title-line">Brighten Hayama</span>
-        <span class="home-title-line home-title-gradient">AI &amp; Machine Learning</span>
-      </h1>
+  <section class="intro">
+    <!-- <p class="intro-kicker">Hi, I'm</p> -->
+    <h1 class="intro-name">Hi, I'm Brighten :)</h1>
+    <p class="intro-line">Student Forever</p>
+    <div class="intro-links">
+      <!-- <a href="https://github.com/brighyama" target="_blank" rel="noopener">GitHub</a> -->
+      <!-- <a href="mailto:brighyama@gmail.com">Email</a> -->
+      <!-- <a href="{{ '/assets/brighten-hayama-resume.pdf' | relative_url }}" target="_blank" rel="noopener">Resume</a> -->
+      <!-- <a href="https://open.spotify.com/user/z4iz51mjaate3ydqho13qhigp?si=cdf0b4a9b2604d00" target="_blank" rel="noopener">Spotify</a> -->
+    </div>
+  </section>
 
-      <!-- <p class="home-hero-copy">
-        <!-- I study how machine learning systems make decisions, build interactive web tools,
-        and look for the mathematical structure hiding inside messy systems. -->
-      <!-- </p> -->
-    </section>
-  </div>
+  <section class="about" id="about" aria-labelledby="about-label">
+    <img class="about-photo" src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="Brighten Hayama">
+    <div class="about-text">
+      <h2 class="section-label" id="about-label">About</h2>
+      <p>
+        I'm a master's student at UC San Diego in the Computer Science &amp; Engineering
+        department. I focus on representation learning and computer vision. My goal is to
+        work on research that makes AI systems learn representations about the world that
+        are more structured and human-interpretable.
+      </p>
+      <p>
+        I've also <a href="{{ '/tutoring/' | relative_url }}">tutored</a> a handful of CS, math, and data science courses during my undergrad at UCSD. 
+        Feel free to check out my past <a href="{{ '/courses/' | relative_url }}">coursework</a>.
+      </p>
+      <p>
+        Outside of school, I enjoy competitive games like <a href="https://www.chess.com/settings/profile" target="_blank" rel="noopener">Chess</a> and <a href="https://csstats.gg/player/76561198977023313" target="_blank" rel="noopener">Counter-Strike</a>.
+        I also love to make <a href="https://open.spotify.com/user/z4iz51mjaate3ydqho13qhigp?si=cdf0b4a9b2604d00" target="_blank" rel="noopener">Spotify playlists</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="featured" aria-labelledby="projects-label">
+    <h2 class="section-label" id="projects-label">Projects</h2>
+    <div class="card-grid">
+
+      <a class="card" href="https://chess.brightenhayama.dev" target="_blank" rel="noopener">
+        <div class="card-media">
+          <img src="{{ '/assets/img/chess-project.png' | relative_url }}" alt="Interpretable Chess">
+        </div>
+        <div class="card-body">
+          <span class="card-title">Interpretable Chess</span>
+          <span class="card-desc">A graph-based opening explorer over Lichess master games, with tunable Stockfish analysis and AI-generated interpretations of each move.</span>
+          <span class="card-arrow">Visit &rarr;</span>
+        </div>
+      </a>
+
+      <a class="card" href="{{ '/assets/agentic-wildfire-paper.pdf' | relative_url }}" target="_blank" rel="noopener">
+        <div class="card-media">
+          <img src="{{ '/assets/img/wildfire-project.png' | relative_url }}" alt="Agentic Wildfire Smoke Detection">
+        </div>
+        <div class="card-body">
+          <span class="card-title">Agentic Wildfire Smoke Detection</span>
+          <span class="card-desc">Four LLM agents coordinate computer-vision tools and weather data to adaptively detect early wildfire smoke.</span>
+          <span class="card-arrow">Visit &rarr;</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://bbeat2782.github.io/nba-analysis/index.html" target="_blank" rel="noopener">
+        <div class="card-media">
+          <img src="{{ '/assets/img/graph-project.png' | relative_url }}" alt="NBA Player Interaction Network Analysis">
+        </div>
+        <div class="card-body">
+          <span class="card-title">NBA Assist Networks</span>
+          <span class="card-desc">An interactive analysis of NBA assist networks from 2001&ndash;2024, with per-player centrality stats you can filter by team and season.</span>
+          <span class="card-arrow">Visit &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+    <a class="more-link" href="{{ '/projects/' | relative_url }}">All projects &rarr;</a>
+  </section>
+
+  {% if site.posts.size > 0 %}
+  <section class="writing" aria-labelledby="writing-label">
+    <h2 class="section-label" id="writing-label">Writing</h2>
+    <div class="card-grid">
+      {% for post in site.posts limit: 3 %}
+      <a class="card" href="{{ post.url | relative_url }}">
+        <div class="card-body">
+          <span class="card-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <span class="card-title">{{ post.title }}</span>
+          <span class="card-desc">{{ post.excerpt | strip_html | truncate: 130 }}</span>
+          <span class="card-arrow">Read &rarr;</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% if site.posts.size > 3 %}
+    <a class="more-link" href="{{ '/blog/' | relative_url }}">All posts &rarr;</a>
+    {% endif %}
+  </section>
+  {% endif %}
+
 </div>

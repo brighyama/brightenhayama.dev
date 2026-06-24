@@ -4,15 +4,16 @@ layout: default
 
 {% assign courses = site.data.courses | sort: "sortkey" | reverse %}
 
-<div class="courses-page">
-  <div class="container">
-    <h1 class="courses-title">Coursework</h1>
-    <p class="courses-intro">
-    
-    </p>
+<div class="container subpage">
+  <a class="back-home" href="{{ '/' | relative_url }}">&larr; Home Page</a>
+
+  <h1 class="page-title">Coursework</h1>
+  <!-- <p class="page-intro">
+    Courses I've taken at UC San Diego across CS, math, and data science. Filter by area or ML focus.
+  </p>
 
     <!-- Filter bar -->
-    <div class="course-filters" id="course-filters">
+    <!-- <div class="course-filters" id="course-filters">
       <div class="filter-group">
         <span class="filter-group-label">Area</span>
         <div class="filter-row">
@@ -36,7 +37,7 @@ layout: default
           <button type="button" class="filter-btn" data-filter="classical">Classical ML</button>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <p class="course-count" id="course-count" aria-live="polite"></p>
 
@@ -71,6 +72,5 @@ layout: default
       {% endfor %}
     </div>
 
-    <p class="course-empty" id="course-empty" hidden>No courses in this category.</p>
-  </div>
+  <p class="course-empty" id="course-empty" hidden>No courses in this category.</p>
 </div>
