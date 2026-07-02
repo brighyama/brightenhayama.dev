@@ -6,8 +6,9 @@ layout: default
 
   <section class="intro">
     <!-- <p class="intro-kicker">Hi, I'm</p> -->
-    <h1 class="intro-name">Hi, I'm Brighten Hayama</h1>
-    <p class="intro-line">MSCS · ML Research @ UCSD</p>
+    <img class="intro-photo" src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="Brighten Hayama">
+    <h1 class="intro-name">Brighten Hayama</h1>
+    <p class="intro-line">MSCS + ML Research @ UCSD</p>
     <div class="intro-links">
       <!-- <a href="https://github.com/brighyama" target="_blank" rel="noopener">GitHub</a> -->
       <!-- <a href="mailto:brighyama@gmail.com">Email</a> -->
@@ -17,11 +18,10 @@ layout: default
   </section>
 
   <section class="about" id="about" aria-labelledby="about-label">
-    <img class="about-photo" src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="Brighten Hayama">
     <div class="about-text">
       <h2 class="section-label" id="about-label">About</h2>
       <p>
-        I'm a master's student at UC San Diego in the Computer Science &amp; Engineering
+        Hi, I'm Brighten, a current master's student at UC San Diego in the Computer Science &amp; Engineering
         department, focused on representation learning and computer vision.
       </p>
       <p>
@@ -37,9 +37,9 @@ layout: default
 
   <section class="featured" aria-labelledby="projects-label">
     <h2 class="section-label" id="projects-label">Projects</h2>
-    <div class="card-grid">
+    <div class="card-grid project-grid">
 
-      <a class="card" href="https://chess.brightenhayama.dev" target="_blank" rel="noopener">
+      <a class="card project-card" href="https://chess.brightenhayama.dev" target="_blank" rel="noopener">
         <div class="card-media">
           <img src="{{ '/assets/img/chess-project.png' | relative_url }}" alt="Interpretable Chess">
         </div>
@@ -50,7 +50,7 @@ layout: default
         </div>
       </a>
 
-      <a class="card" href="{{ '/assets/agentic-wildfire-paper.pdf' | relative_url }}" target="_blank" rel="noopener">
+      <a class="card project-card" href="{{ '/assets/agentic-wildfire-paper.pdf' | relative_url }}" target="_blank" rel="noopener">
         <div class="card-media">
           <img src="{{ '/assets/img/wildfire-project.png' | relative_url }}" alt="Agentic Wildfire Smoke Detection">
         </div>
@@ -61,7 +61,7 @@ layout: default
         </div>
       </a>
 
-      <a class="card" href="https://bbeat2782.github.io/nba-analysis/index.html" target="_blank" rel="noopener">
+      <a class="card project-card" href="https://bbeat2782.github.io/nba-analysis/index.html" target="_blank" rel="noopener">
         <div class="card-media">
           <img src="{{ '/assets/img/graph-project.png' | relative_url }}" alt="NBA Player Interaction Network Analysis">
         </div>

@@ -11,7 +11,8 @@
 
   const RGB = "74, 222, 128"; // accent green
   const LINK_DIST = 160;
-  const MOUSE_DIST = 130;
+  const MOUSE_DIST = 105;
+  const NODE_SPEED = 0.14;
 
   let w = 0;
   let h = 0;
@@ -26,8 +27,8 @@
       nodes.push({
         x: Math.random() * w,
         y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.175,
-        vy: (Math.random() - 0.5) * 0.175,
+        vx: (Math.random() - 0.5) * NODE_SPEED,
+        vy: (Math.random() - 0.5) * NODE_SPEED,
       });
     }
   }
@@ -81,7 +82,7 @@
     }
     ctx.lineWidth = 1;
     for (let b = 0; b < BUCKETS; b++) {
-      ctx.strokeStyle = "rgba(" + RGB + "," + ((b + 0.5) / BUCKETS) * 0.32 + ")";
+      ctx.strokeStyle = "rgba(" + RGB + "," + ((b + 0.5) / BUCKETS) * 0.22 + ")";
       ctx.stroke(paths[b]);
     }
 
@@ -98,16 +99,16 @@
           mpath.lineTo(mouse.x, mouse.y);
         }
       }
-      ctx.strokeStyle = "rgba(" + RGB + ", 0.4)";
+      ctx.strokeStyle = "rgba(" + RGB + ", 0.24)";
       ctx.stroke(mpath);
     }
 
     // nodes
-    ctx.fillStyle = "rgba(202, 245, 216, 0.85)";
+    ctx.fillStyle = "rgba(202, 245, 216, 0.62)";
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       ctx.beginPath();
-      ctx.arc(n.x, n.y, 1.6, 0, Math.PI * 2);
+      ctx.arc(n.x, n.y, 1.35, 0, Math.PI * 2);
       ctx.fill();
     }
 

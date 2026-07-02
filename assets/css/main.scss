@@ -129,6 +129,15 @@ a:hover { color: #86efac; }
   margin-bottom: 0.5rem;
 }
 
+.intro-photo {
+  width: clamp(136px, 20vw, 188px);
+  height: clamp(136px, 20vw, 188px);
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--border-strong);
+  margin-bottom: 1.55rem;
+}
+
 .intro-name {
   font-size: clamp(2.6rem, 8vw, 4.25rem);
   letter-spacing: -0.02em;
@@ -170,24 +179,11 @@ a:hover { color: #86efac; }
    HOME — ABOUT
    ========================================================= */
 .about {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: clamp(1.5rem, 4vw, 2.5rem);
-}
-
-.about-photo {
-  width: clamp(120px, 22vw, 168px);
-  height: clamp(120px, 22vw, 168px);
-  object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid var(--border-strong);
-  flex-shrink: 0;
+  display: block;
 }
 
 .about-text {
-  flex: 1 1 320px;
-  min-width: 0;
+  max-width: 62ch;
 }
 .about-text p + p {
   margin-top: 1rem;
@@ -226,7 +222,12 @@ a:hover { color: #86efac; }
   gap: 1.25rem;
 }
 
+.project-grid {
+  grid-template-columns: 1fr;
+}
+
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: var(--panel);
@@ -239,6 +240,45 @@ a:hover { color: #86efac; }
 }
 .card:hover {
   border-color: var(--accent);
+}
+
+.project-card {
+  isolation: isolate;
+  flex-direction: row;
+  min-height: 190px;
+  background: rgba(8, 11, 9, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+.project-card:hover {
+  border-color: rgba(134, 239, 172, 0.82);
+  box-shadow:
+    0 0 0 1px rgba(74, 222, 128, 0.16),
+    0 0 20px rgba(74, 222, 128, 0.12);
+}
+.project-card .card-body {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 70%;
+  min-width: 0;
+  order: 1;
+  padding: clamp(1.1rem, 3vw, 1.45rem) clamp(1.2rem, 3vw, 1.6rem);
+}
+.project-card .card-media {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 30%;
+  min-width: 185px;
+  aspect-ratio: auto;
+  order: 2;
+  border-left: 1px solid var(--border);
+}
+.project-card .card-media img {
+  filter: saturate(0.92) contrast(1.02);
+  transition: filter 0.22s ease;
+}
+.project-card:hover .card-media img {
+  filter: saturate(1.08) contrast(1.07);
 }
 
 .card-media {
@@ -623,6 +663,21 @@ a:hover { color: #86efac; }
    ========================================================= */
 @media (max-width: 600px) {
   .about { flex-direction: column; }
+  .project-card {
+    flex-direction: column;
+    min-height: 0;
+  }
+  .project-card .card-body,
+  .project-card .card-media {
+    flex: none;
+    order: initial;
+  }
+  .project-card .card-media {
+    min-width: 0;
+    aspect-ratio: 16 / 10;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
   .tutoring-course summary {
     grid-template-columns: 1fr;
     gap: 0.5rem 0.75rem;
