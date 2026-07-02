@@ -149,6 +149,66 @@
 })();
 
 /* =========================================================
+   Intro automatic transition
+   ========================================================= */
+(function () {
+  const intro = document.querySelector(".intro");
+  const content = document.querySelector(".intro-content");
+  const about = document.querySelector(".about");
+  if (!intro || !content || !about) return;
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const delay = reduce ? 0 : 520;
+
+  function measure() {
+    const isSmall = window.innerWidth <= 600;
+    const top = isSmall ? 24 : 32;
+    const gap = isSmall ? 22 : 30;
+    const scale = isSmall ? 0.74 : 0.64;
+    const aboutMargin = parseFloat(window.getComputedStyle(about).marginTop) || 0;
+    const finalHeight = top + content.offsetHeight * scale + gap - aboutMargin;
+    const finalY = top - finalHeight / 2;
+
+    return {
+      height: Math.max(220, finalHeight),
+      transform: "translateX(-50%) translateY(" + finalY + "px) scale(" + scale + ")",
+    };
+  }
+
+  function applyFinal(animated) {
+    const finalState = measure();
+
+    if (!animated) {
+      intro.style.transition = "none";
+      content.style.transition = "none";
+    }
+
+    intro.style.minHeight = finalState.height + "px";
+    content.style.transform = finalState.transform;
+
+    if (!animated) {
+      window.requestAnimationFrame(function () {
+        intro.style.transition = "";
+        content.style.transition = "";
+      });
+    }
+  }
+
+  window.setTimeout(function () {
+    const startHeight = intro.offsetHeight;
+    intro.style.minHeight = startHeight + "px";
+
+    window.requestAnimationFrame(function () {
+      applyFinal(!reduce);
+    });
+  }, delay);
+
+  window.addEventListener("resize", function () {
+    applyFinal(false);
+  });
+})();
+
+/* =========================================================
    Courses filter
    ========================================================= */
 (function () {
